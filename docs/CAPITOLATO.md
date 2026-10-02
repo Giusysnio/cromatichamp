@@ -157,7 +157,7 @@ Il progetto nasce come **portfolio di uno sviluppatore junior**: l'obiettivo è 
 
 ```
 cromatichamp/
-├── .github/            # workflow CI, template issue e PR
+├── .github/            # workflow CI e template PR
 ├── backend/            # Spring Boot (Maven)
 │   └── src/main/java/...
 ├── frontend/           # Angular
@@ -167,7 +167,7 @@ cromatichamp/
 │       ├── components/
 │       └── pages/
 ├── docs/               # capitolato, decisioni di progetto
-├── scripts/            # script di supporto (roadmap, project)
+├── scripts/            # script di supporto (tabella di roadmap)
 ├── docker-compose.yml  # PostgreSQL per lo sviluppo
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
@@ -221,11 +221,11 @@ Esempio: `feat(backend): aggiunge endpoint di login con JWT`
 
 ### 11.3 Branching (GitHub Flow)
 - `main`: sempre stabile e rilasciabile, protetto.
-- `feat/<nome>`, `fix/<nome>`, `docs/<nome>`, `chore/<nome>`: un branch per issue.
-- Ogni modifica entra in `main` tramite **Pull Request** con CI verde (squash merge). Nel corpo della PR si scrive `Closes #N` per chiudere la issue.
+- `feat/<nome>`, `fix/<nome>`, `docs/<nome>`, `chore/<nome>`: un branch per attività della roadmap.
+- Ogni modifica entra in `main` tramite **Pull Request** con CI verde (squash merge).
 
 ### 11.4 Rilascio
-1. Tutte le issue della milestone sono chiuse.
+1. Tutte le attività della versione sono nello stato **Done** nella tabella di roadmap.
 2. Si aggiorna `CHANGELOG.md`.
 3. Si crea il tag `vX.Y.Z` e la GitHub Release con le note.
 
@@ -244,7 +244,7 @@ Esempio: `feat(backend): aggiunge endpoint di login con JWT`
 | **v0.9.0** | PWA e qualità | Offline, installabile, accessibilità, prestazioni |
 | **v1.0.0** | Rilascio | Deploy di frontend e backend, test su dispositivi, documentazione finale |
 
-Il dettaglio delle attività è mantenuto come **issue e milestone su GitHub**, creati dallo script `scripts/setup-roadmap.sh` e visualizzati in una tabella con GitHub Projects (`scripts/setup-project.sh`).
+Il dettaglio delle attività è mantenuto in una **tabella di roadmap su GitHub Projects** (colonne: attività, versione, area, stato), creata dallo script `scripts/setup-roadmap-table.sh`.
 
 ## 13. Criteri di accettazione della v1.0.0
 
