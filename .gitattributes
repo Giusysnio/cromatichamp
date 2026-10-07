@@ -1,0 +1,3 @@
+# Normalizza i fine riga (importante su Windows)
+* text=auto
+*.sh text eol=lf
